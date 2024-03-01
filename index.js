@@ -10,7 +10,7 @@ http.createServer((req, res) => {
   if (reqUrl === '/hello') {
     res.write('Hello Sciences-U ! 4INFO en force');
     res.end();
-  } else if (reqUrl === '/wotticus') {
+  } else if (reqUrl === '/wotticus4') {
     res.write('On est des bg ');
     res.end();
   }
