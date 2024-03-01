@@ -1,0 +1,11 @@
+{
+  "name": "api-js",
+  "version": "1.0.0",
+  "description": "api-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "author": "",
+  "license": "ISC"
+}
