@@ -7,7 +7,7 @@ beforeAll(() => {
     const reqUrl = new URL(req.url, `http://${req.headers.host}`).pathname;
 
     if (reqUrl === '/hello') {
-      res.write('Hello Sciences-U !');
+      res.write('Hello Sciences-U ! 4INFO en force');
       res.end();
     } else {
       res.writeHead(404);
