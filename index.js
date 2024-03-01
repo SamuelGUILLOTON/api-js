@@ -1,7 +1,7 @@
 'use strict'; // Assurez-vous que le code s'exécute en mode strict
 
-const http = require('http'); // Utilise const pour les importations
-const url = require('url'); // N'oubliez pas d'importer le module 'url' nécessaire pour parser l'URL
+const http = require('http');
+const url = require('url');
 
 http.createServer((req, res) => {
   const reqUrl = url.parse(req.url, true).pathname; // Utilisez const ici, ajoutez true pour le parsing query string
@@ -10,8 +10,8 @@ http.createServer((req, res) => {
   if (reqUrl === '/hello') {
     res.write('Hello Sciences-U !');
     res.end();
-  } else if (reqUrl === '/worazme') {
-    res.write('worazme il sent mauvais');
+  } else if (reqUrl === '/wotticus') {
+    res.write('On est beau');
     res.end();
   }
 
