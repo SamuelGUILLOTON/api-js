@@ -3,7 +3,6 @@ const http = require('http');
 let server;
 
 beforeAll(() => {
-  // Initialise your server here (the example assumes the server code is in the same file)
   server = http.createServer((req, res) => {
     const reqUrl = new URL(req.url, `http://${req.headers.host}`).pathname;
 
@@ -18,7 +17,6 @@ beforeAll(() => {
 });
 
 afterAll((done) => {
-  // Close your server after the tests
   server.close(done);
 });
 
