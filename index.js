@@ -4,13 +4,13 @@ const http = require('http');
 const url = require('url');
 
 http.createServer((req, res) => {
-  const reqUrl = url.parse(req.url, true).pathname; // Utilisez const ici, ajoutez true pour le parsing query string
+  const reqUrl = url.parse(req.url, true).pathname; // Utilisez const ici, ajoutez true pour le parsing query string.
 
   // Utilisez === pour la comparaison stricte et utilisez else if pour une meilleure lisibilité et performance
   if (reqUrl === '/hello') {
     res.write('Hello Sciences-U ! 4INFO en force');
     res.end();
-  } else if (reqUrl === '/wotticus') {
+  } else if (reqUrl === '/wotticus4') {
     res.write('On est des bg ');
     res.end();
   }
