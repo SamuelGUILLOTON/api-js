@@ -25,7 +25,7 @@ it("Async test for /hello endpoint", async () => {
     .get("/hello")
     .expect(200)
     .then(response => {
-      expect(response.text).toEqual("Hello Sciences-U !");
+      expect(response.text).toEqual("Hello Sciences-U ! 4INFO en force");
     });
 });
 
