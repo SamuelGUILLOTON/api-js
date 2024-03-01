@@ -4,8 +4,14 @@
   "description": "api-js",
   "main": "index.js",
   "scripts": {
-    "test": "run test"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
 }
