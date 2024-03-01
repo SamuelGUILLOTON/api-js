@@ -4,7 +4,7 @@ const http = require('http');
 const url = require('url');
 
 http.createServer((req, res) => {
-  const reqUrl = url.parse(req.url, true).pathname; // Utilisez const ici, ajoutez true pour le parsing query string
+  const reqUrl = url.parse(req.url, true).pathname; // Utilisez const ici, ajoutez true pour le parsing query string.
 
   // Utilisez === pour la comparaison stricte et utilisez else if pour une meilleure lisibilité et performance
   if (reqUrl === '/hello') {
