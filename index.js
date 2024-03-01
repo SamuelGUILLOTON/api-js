@@ -11,7 +11,7 @@ http.createServer((req, res) => {
     res.write('Hello Sciences-U !');
     res.end();
   } else if (reqUrl === '/wotticus') {
-    res.write('On est beau');
+    res.write('On est des bg ');
     res.end();
   }
 
