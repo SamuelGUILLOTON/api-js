@@ -6,45 +6,47 @@ on:
   pull_request:
     branches: [ "main" ]
 
-
-
 jobs:
-  steps:
-    - test
-    - first
-    - second
-    - third
   test:
-    stage: test
     runs-on: ubuntu-latest
     steps:
       - name: Echo and Sleep
         run: |
-          echo "Hello job from Stage 1 Job 1"
+          echo "Hello job from Test"
           sleep 5
-    
+
   job1:
-    stage: first
-    script:
-      - echo "hello job"
-      - sleep 5
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Echo and Sleep
+        run: |
+          echo "hello job from First Stage"
+          sleep 5
 
   job2:
-    stage: second
-    script:
-      - echo "hello job"
-      - sleep 5
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Echo and Sleep
+        run: |
+          echo "hello job from Second Stage"
+          sleep 5
 
   job3:
-    stage: second
-    script:
-      - echo "hello job"
-      - sleep 30
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Echo and Sleep Longer
+        run: |
+          echo "hello job from Second Stage (Longer Sleep)"
+          sleep 30
 
   job4:
-    stage: third
-    script:
-      - echo "hello job"
-      - sleep 5
-    when: manual
-    needs: job2
+    runs-on: ubuntu-latest
+    needs: [job2, job3]
+    steps:
+      - name: Echo and Sleep
+        run: |
+          echo "hello job from Third Stage"
+          sleep 5
