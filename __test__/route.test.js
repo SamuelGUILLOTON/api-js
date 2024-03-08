@@ -1,36 +1,36 @@
-const request = require('supertest');
-const http = require('http');
-let server;
+const request = require('supertest')
+const http = require('http')
+let server
 
 beforeAll(() => {
   server = http.createServer((req, res) => {
-    const reqUrl = new URL(req.url, `http://${req.headers.host}`).pathname;
+    const reqUrl = new URL(req.url, `http://${req.headers.host}`).pathname
 
     if (reqUrl === '/hello') {
-      res.write('Hello Sciences-U ! 4INFO en force');
-      res.end();
+      res.write('Hello Sciences-U ! 4INFO en force')
+      res.end()
     } else {
-      res.writeHead(404);
-      res.end();
+      res.writeHead(404)
+      res.end()
     }
-  }).listen(1234);
-});
+  }).listen(1234)
+})
 
 afterAll((done) => {
-  server.close(done);
-});
+  server.close(done)
+})
 
 it("Async test for /hello endpoint", async () => {
   await request(server)
     .get("/hello")
     .expect(200)
     .then(response => {
-      expect(response.text).toEqual("Hello Sciences-U ! 4INFO en force");
-    });
-});
+      expect(response.text).toEqual("Hello Sciences-U ! 4INFO en force")
+    })
+})
 
 it("Async test for non-existing endpoint", async () => {
   await request(server)
     .get("/non-existing")
-    .expect(404);
-});
+    .expect(404)
+})
