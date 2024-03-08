@@ -5,10 +5,16 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-    
+
+stages:
+  - test
+  - first
+  - second
+  - third
 
 jobs:
   test:
+    stage: test
     runs-on: ubuntu-latest
     steps:
       - name: Echo and Sleep
