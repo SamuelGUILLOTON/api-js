@@ -22,6 +22,6 @@ jobs:
         with:
           node-version: '16'
       - name: install
-        run: npx install
+        run: npm install
       - name: ESLint
-        run: npx run lint .
+        run: npm run lint .
