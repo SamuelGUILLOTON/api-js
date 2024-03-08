@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Lint
         run: |
-          npx eslint --ext .js
+          npx eslint . --ext .js
           sleep 5
