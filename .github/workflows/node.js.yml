@@ -1,15 +1,30 @@
-name: Simple Echo CI
+stages:
+  - first
+  - second
+  - third
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+job1:
+  stage: first
+  script:
+    - echo "hello job"
+    - sleep 5
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+job2:
+  stage: second
+  script:
+    - echo "hello job"
+    - sleep 5
 
-    steps:
-    - name: Echo Hello World
-      run: echo "Hello World"
+job3:
+  stage: second
+  script:
+    - echo "hello job"
+    - sleep 30
+
+job4:
+  stage: third
+  script:
+    - echo "hello job"
+    - sleep 5
+  when: manual
+  needs: job2
