@@ -1,13 +1,24 @@
-stages:
-  - first
-  - second
-  - third
+name: Simple Echo CI
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
+jobs:
+  stage1-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo and Sleep
+        run: |
+          echo "Hello job from Stage 1 Job 1"
+          sleep 5
+
+stages:
+  - first
+  - second
+  - third
     
 job1:
   stage: first
