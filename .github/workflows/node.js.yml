@@ -3,6 +3,12 @@ stages:
   - second
   - third
 
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
 job1:
   stage: first
   script:
