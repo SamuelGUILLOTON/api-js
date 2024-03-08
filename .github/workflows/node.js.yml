@@ -5,6 +5,12 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+  inputs:
+    include_job4:
+      description: 'Include Job 4 (true/false)?'
+      required: true
+      default: 'false'
 
 jobs:
   test:
@@ -41,6 +47,7 @@ jobs:
           sleep 30
 
   job4:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.include_job4 == 'true' }}
     runs-on: ubuntu-latest
     needs: job2
     steps:
