@@ -6,13 +6,14 @@ on:
   pull_request:
     branches: [ "main" ]
 
-stages:
-  - test
-  - first
-  - second
-  - third
+
 
 jobs:
+  steps:
+    - test
+    - first
+    - second
+    - third
   test:
     stage: test
     runs-on: ubuntu-latest
