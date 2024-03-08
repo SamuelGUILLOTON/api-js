@@ -8,7 +8,7 @@ http.createServer((req, res) => {
 
   // Utilisez === pour la comparaison stricte et utilisez else if pour une meilleure lisibilité et performance
   if (reqUrl === '/hello') {
-    res.write('Hello Sciences-U ! 4INFO en force');
+    res.write('Hello Sciences-U ! 4INFO en force')
     res.end()
   } else if (reqUrl === '/wotticus4') {
     res.write('On est des bg ')
