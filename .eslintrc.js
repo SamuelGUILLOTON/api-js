@@ -4,7 +4,7 @@ module.exports = {
         "commonjs": true,
         "es2021": true
     },
-    "ignorePatterns": ["!.*", "dist", "node_modules"],
+    "ignorePatterns": ["!.*", "dist", "node_modules", "__test__"],
     "extends": "eslint:recommended",
     "overrides": [
         {
